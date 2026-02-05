@@ -29,4 +29,8 @@ public class ProductService{
     public void delete(Long id){
         productRepository.deleteById(id);
     }
+    public boolean checkStockAvailability(Long productId, Integer requestQuantity){
+        Product product = getById(productId);
+        return product.getStock() >= requestQuantity;
+    }
 }

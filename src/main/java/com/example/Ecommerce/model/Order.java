@@ -28,4 +28,13 @@ public class Order{
 
     @OneToMany(mappedBy = "order", cascade =  CascadeType.ALL)
     private List<OrderItem> items;
+
+
+    @PrePersist
+    protected void onCreate(){
+        createdAt = LocalDateTime.now();
+        if(status == null ) {
+            status = "PENDING";
+        }
+    }
 }

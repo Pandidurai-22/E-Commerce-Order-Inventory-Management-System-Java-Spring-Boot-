@@ -34,6 +34,7 @@ public class AdminInitializer{
     } else{
          System.out.println("Admin already Exist");
         }
+        
     }
 
 }
